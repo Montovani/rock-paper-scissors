@@ -3,7 +3,7 @@ Rock Paper Scissors project from TOP
 
 # 🪨📄✂️ Rock Paper Scissors - JavaScript Game
 
-A simple Rock Paper Scissors game built with vanilla JavaScript, where you play against the computer.
+A simple Rock Paper Scissors game built with JavaScript, where you play against the computer.
 
 ## 🚀 Features
 
