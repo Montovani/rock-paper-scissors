@@ -1,3 +1,4 @@
+(function(){
 let userChoice = ''
 let computerChoice = ''
 let userScore = 0
@@ -9,7 +10,7 @@ const btnPaper = document.querySelector('.btn-paper')
 const btnScissors = document.querySelector('.btn-scissors')
 const btnRestartGame = document.querySelector('.restart-game-btn')
 
-//Event to get the user choice, trigger the computer choice and run the match
+//Events to get the user choice, trigger the computer choice, run the match and restart the game
 btnRock.addEventListener('click',getUserChoice)
 btnRock.addEventListener('click',getComputerChoice)
 btnRock.addEventListener('click',gameMatch)
@@ -23,6 +24,8 @@ btnScissors.addEventListener('click',getComputerChoice)
 btnScissors.addEventListener('click',gameMatch)
 btnScissors.addEventListener('click',gameScore)
 btnRestartGame.addEventListener('click',restartGame)
+
+//functions
 
 function getUserChoice (event) {
     if (event.target.id === 'rock') {
@@ -125,5 +128,23 @@ function restartGame () {
     btnScissors.addEventListener('click',gameMatch)
     btnScissors.addEventListener('click',gameScore)
     btnRestartGame.addEventListener('click',restartGame)
-
 }
+
+window.addEventListener ('unload' , ()=> {
+        btnRock.removeEventListener('click',getUserChoice)
+        btnRock.removeEventListener('click',getComputerChoice)
+        btnRock.removeEventListener('click',gameMatch)
+        btnRock.removeEventListener('click',gameScore)
+        btnPaper.removeEventListener('click',getUserChoice)
+        btnPaper.removeEventListener('click',getComputerChoice)
+        btnPaper.removeEventListener('click',gameMatch)
+        btnPaper.removeEventListener('click',gameScore)
+        btnScissors.removeEventListener('click',getUserChoice)
+        btnScissors.removeEventListener('click',getComputerChoice)
+        btnScissors.removeEventListener('click',gameMatch)
+        btnScissors.removeEventListener('click',gameScore)
+        btnRestartGame.removeEventListener('click',restartGame)
+        console.log('[unload] listeners removed')
+})
+
+})();
