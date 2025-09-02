@@ -115,6 +115,7 @@ function restartGame () {
     computerScore = 0
     document.querySelector('.computer-number').innerHTML = computerScore
     document.querySelector('.computer-option').innerHTML = ''
+    document.querySelector('.winner-of-match').innerHTML = ''
     btnRock.addEventListener('click',getUserChoice)
     btnRock.addEventListener('click',getComputerChoice)
     btnRock.addEventListener('click',gameMatch)
